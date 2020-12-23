@@ -11,7 +11,7 @@ import com.nickmirosh.funfinder.features.venues.utils.VerticalSpaceItemDecoratio
 import kotlinx.android.synthetic.main.fragment_map_venue.*
 
 
-class MapVenueFragment : Fragment(R.layout.fragment_map_venue){
+class MapVenueFragment : Fragment(R.layout.fragment_map_venue) {
 
     private lateinit var venueListAdapter: VenueAdapter
 
@@ -19,6 +19,13 @@ class MapVenueFragment : Fragment(R.layout.fragment_map_venue){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+        val doOnClick: (View) -> Unit = {
+            mapVenueViewModel.getRecommendedVenues("fdfs", 2)
+        }
+
+        get_venues_button.setOnClickListener(doOnClick)
         initRecyclerView()
         startObservingViewModelEvents()
     }
@@ -35,9 +42,8 @@ class MapVenueFragment : Fragment(R.layout.fragment_map_venue){
     private fun startObservingViewModelEvents() {
 
         mapVenueViewModel.apply {
-            venuesLiveData.observe(viewLifecycleOwner, Observer {
-//                venueListAdapter.setData(it.getData())
-//                handleProgressBar(false)
+            venuesLiveData.observe(viewLifecycleOwner, Observer { venues ->
+                venueListAdapter.setData(venues)
             })
         }
 

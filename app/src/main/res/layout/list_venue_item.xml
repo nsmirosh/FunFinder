@@ -12,12 +12,11 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/distanceTextView"
+            android:id="@+id/venueNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="30sp"
-            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

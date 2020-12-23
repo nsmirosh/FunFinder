@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nickmirosh.funfinder.R
 import com.nickmirosh.funfinder.features.venues.domain.Venue
+import kotlinx.android.synthetic.main.list_venue_item.view.*
 
 
 class VenueAdapter : RecyclerView.Adapter<VenueAdapter.VenueItemViewHolder>() {
@@ -15,14 +16,11 @@ class VenueAdapter : RecyclerView.Adapter<VenueAdapter.VenueItemViewHolder>() {
     private var venueList = ArrayList<Venue>()
 
     fun setData(newVenueList: List<Venue>) {
-      /*  val diffCallback = VenuesDiffCallback(venueList, newVenueList)
-        val diffResult = DiffUtil.calculateDiff(diffCallback)*/
         venueList.apply {
             clear()
             addAll(newVenueList)
             notifyDataSetChanged()
         }
-//        diffResult.dispatchUpdatesTo(this)
     }
 
     fun setVenueListClickHandler(venueListClickHandler: VenueListClickHandler?) {
@@ -44,22 +42,11 @@ class VenueAdapter : RecyclerView.Adapter<VenueAdapter.VenueItemViewHolder>() {
 
         fun bindTo(venueItem: Venue) {
             itemView.apply {
-/*                val parsedVenue = VenueUtils.parseVenue(venueItem)
-                parsedVenue.apply {
-                    venueNameTextView.text = this.name
-                    addressTextView.text = this.address
-                    PicassoUtils.insertInto(categoryImageView, primaryCategoryIconPath)
-                    categoryNameTextView.text = this.primaryCategoryName
-                }
-
-                setOnClickListener {
-                    val clickedImage = venueList[adapterPosition]
-                    venueListClickHandler?.onVenueClicked(clickedImage)
-                }*/
+                venueNameTextView.text = venueItem.name
             }
         }
     }
-
+    
     interface VenueListClickHandler {
         fun onVenueClicked(venue: Venue)
     }

@@ -9,10 +9,17 @@ import com.nickmirosh.funfinder.features.venues.domain.Venue
 class MapVenueViewModel() : ViewModel() {
     private var foodVenues = ArrayList<Venue>()
 
-    private val mutableVenuesLiveData: MutableLiveData<Result<List<Venue>>> = MutableLiveData()
-    val venuesLiveData: LiveData<Result<List<Venue>>> get() = mutableVenuesLiveData
+    private val mutableVenuesLiveData: MutableLiveData<List<Venue>> = MutableLiveData()
+    val venuesLiveData: LiveData<List<Venue>> get() = mutableVenuesLiveData
 
-    fun getRecommendedVenues(latLng: String, radius: Int) {
+    fun getRecommendedVenues(latLng: String, radius: Int){
 
+        val venuesList = listOf(
+            Venue("1", "someVenue1"),
+            Venue("2", "someVenue2"),
+            Venue("3", "someVenue3")
+        )
+
+        mutableVenuesLiveData.value = venuesList
     }
 }
