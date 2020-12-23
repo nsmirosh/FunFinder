@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nickmirosh.funfinder.R
-import nikolay.miroshnychenko.beat_test_task.data.Venue
+import com.nickmirosh.funfinder.features.venues.domain.Venue
 
 
 class VenueAdapter : RecyclerView.Adapter<VenueAdapter.VenueItemViewHolder>() {

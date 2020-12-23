@@ -5,99 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/default_small_margin"
-    android:layout_marginEnd="@dimen/default_small_margin"
-    app:cardElevation="@dimen/default_card_elevation">
+    android:layout_marginEnd="@dimen/default_small_margin">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/categoryImageView"
-            android:layout_width="82dp"
-            android:layout_height="82dp"
-            android:scaleType="fitXY"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/venueNameTextView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/android_test_image" />
-
-        <ImageView
-            android:id="@+id/redOverlayImageView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@color/venue_red_overlay"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@id/categoryImageView"
-            app:layout_constraintEnd_toEndOf="@id/categoryImageView"
-            app:layout_constraintStart_toStartOf="@id/categoryImageView"
-            app:layout_constraintTop_toTopOf="@id/categoryImageView" />
-
         <TextView
             android:id="@+id/distanceTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_medium"
             android:textColor="@color/white"
             android:textSize="30sp"
             android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@id/metersTextView"
-            app:layout_constraintEnd_toEndOf="@id/categoryImageView"
-            app:layout_constraintStart_toStartOf="@id/categoryImageView"
-            app:layout_constraintTop_toTopOf="@id/categoryImageView"
-            app:layout_constraintVertical_chainStyle="packed"
-            tools:text="50" />
-
-        <TextView
-            android:id="@+id/metersTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_regular"
-            android:text="@string/venue_item_meters"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@id/categoryImageView"
-            app:layout_constraintEnd_toEndOf="@id/distanceTextView"
-            app:layout_constraintStart_toStartOf="@id/distanceTextView"
-            app:layout_constraintTop_toBottomOf="@id/distanceTextView"
-            tools:text="meters" />
-
-        <TextView
-            android:id="@+id/venueNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/default_medium_margin"
-            android:layout_marginTop="@dimen/default_small_margin"
-            android:fontFamily="@font/roboto_medium"
-            android:textColor="@color/large_text"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@id/categoryImageView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Venue name" />
-
-        <TextView
-            android:id="@+id/categoryNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_regular"
-            android:textColor="@color/medium_text"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="@id/venueNameTextView"
-            app:layout_constraintTop_toBottomOf="@id/venueNameTextView"
-            tools:text="Venue category" />
-
-        <TextView
-            android:id="@+id/addressTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_regular"
-            android:textColor="@color/small_text"
-            android:textSize="13sp"
-            app:layout_constraintStart_toStartOf="@id/venueNameTextView"
-            app:layout_constraintTop_toBottomOf="@id/categoryNameTextView"
-            tools:text="Venue address" />
+            tools:text="50" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,4 +1,4 @@
-package nikolay.miroshnychenko.beat_test_task.data
+package com.nickmirosh.funfinder.features.venues.domain
 
 data class VenueLocation(
     val distance: Int?,

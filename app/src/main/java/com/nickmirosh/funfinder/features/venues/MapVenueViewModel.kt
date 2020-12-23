@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-import nikolay.miroshnychenko.beat_test_task.data.Venue
+import com.nickmirosh.funfinder.features.venues.domain.Venue
 
 class MapVenueViewModel() : ViewModel() {
     private var foodVenues = ArrayList<Venue>()
