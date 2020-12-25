@@ -46,7 +46,7 @@ class VenueAdapter : RecyclerView.Adapter<VenueAdapter.VenueItemViewHolder>() {
             }
         }
     }
-    
+
     interface VenueListClickHandler {
         fun onVenueClicked(venue: Venue)
     }
