@@ -8,7 +8,7 @@ import retrofit2.http.Query
 interface FourSquareApi {
 
     @GET("venues/search")
-    fun getVenues(
+    fun getRecommendedVenues(
         @Query("ll") latAndLong: String,
         @Query("categoryId") categoryId: String,
         @Query("radius") radiusToSearchFor: Int)
