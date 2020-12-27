@@ -5,19 +5,16 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import com.nickmirosh.funfinder.BuildConfig
 import com.nickmirosh.funfinder.features.venues.data.FourSquareApi
-import com.nickmirosh.funfinder.features.venues.data.datasource.FourSquareDataSource
 
 import com.nickmirosh.funfinder.features.venues.domain.Venue
 import kotlinx.coroutines.*
-import nikolay.miroshnychenko.beat_test_task.data.datasource.FourSquareRemoteDataSource
-import nikolay.miroshnychenko.beat_test_task.data.datasource.FourSquareRepository
+import nikolay.miroshnychenko.beat_test_task.data.datasource.VenuesRemoteDataSource
+import nikolay.miroshnychenko.beat_test_task.data.datasource.VenuesRepository
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import timber.log.Timber
 
 class MapVenueViewModel() : ViewModel() {
     private var foodVenues = ArrayList<Venue>()
@@ -27,15 +24,13 @@ class MapVenueViewModel() : ViewModel() {
 
     fun getRecommendedVenues(latLng: String, radius: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            val stuff = buildRepo().getRecommendedVenues("444", 3)
-            val response = stuff.execute()
+            val stuff = buildRepo().getRecommendedVenues("50.4501, 30.5234", 1000)
         }
     }
 
-
-    private fun buildRepo (): FourSquareRepository {
-        val dataSource = FourSquareRemoteDataSource(buildRetrofit())
-        return FourSquareRepository(dataSource)
+    private fun buildRepo (): VenuesRepository {
+        val dataSource = VenuesRemoteDataSource(buildRetrofit())
+        return VenuesRepository(dataSource)
     }
 
 
