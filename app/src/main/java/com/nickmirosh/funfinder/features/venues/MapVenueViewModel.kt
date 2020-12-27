@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import com.nickmirosh.funfinder.BuildConfig
 import com.nickmirosh.funfinder.features.venues.data.FourSquareApi
 
 import com.nickmirosh.funfinder.features.venues.domain.Venue
@@ -44,13 +45,13 @@ class MapVenueViewModel() : ViewModel() {
                 val newUrl = originalRequest.url.newBuilder()
                     .addQueryParameter(
                         "client_id",
-                        "FR4R2GZO4R3X0TRVA4OE3ODTNQHL5PLS3NY42LSCMD1IVNTH"
+                        BuildConfig.CLIENT_ID
                     )
                     .addQueryParameter(
                         "client_secret",
-                        "ANGF2UU2A21JXIAT0PAAM0MDRHX0V5ZXJZ1ACD5OVSH5OLNC"
+                        BuildConfig.CLIENT_SECRET
                     )
-                    .addQueryParameter("v", "20201118")
+                    .addQueryParameter("v", BuildConfig.API_VERSION_DATE)
                     .build();
 
                 val requestBuilder = originalRequest.newBuilder()

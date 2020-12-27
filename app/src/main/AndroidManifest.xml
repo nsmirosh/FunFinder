@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:name=".features.FunFinderApplication"
         android:theme="@style/Theme.FunFinder">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
         <activity android:name=".features.venues.MapVenueActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

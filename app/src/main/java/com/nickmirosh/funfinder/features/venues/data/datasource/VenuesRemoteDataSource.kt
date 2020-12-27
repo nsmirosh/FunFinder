@@ -5,7 +5,6 @@ import com.nickmirosh.funfinder.features.venues.data.datasource.IVenuesDataSourc
 import com.nickmirosh.funfinder.features.venues.domain.VenueAndReasons
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import timber.log.Timber
 
 const val FOOD_CATEGORY_ID = "4d4b7105d754a06374d81259"
 
