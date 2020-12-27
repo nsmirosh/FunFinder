@@ -5,6 +5,10 @@ plugins {
 
 }
 
+
+def keysProperties = new Properties()
+keysProperties.load(new FileInputStream(rootProject.file("keys.properties")))
+
 android {
     compileSdkVersion 29
     buildToolsVersion "30.0.1"
@@ -18,8 +22,9 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "CLIENT_ID", "\"FR4R2GZO4R3X0TRVA4OE3ODTNQHL5PLS3NY42LSCMD1IVNTH\"")
-        buildConfigField("String", "CLIENT_SECRET", "\"ANGF2UU2A21JXIAT0PAAM0MDRHX0V5ZXJZ1ACD5OVSH5OLNC\"")
+        buildConfigField("String", "CLIENT_ID", keysProperties['fourSquareClientId'])
+        buildConfigField("String", "CLIENT_SECRET", keysProperties['fourSquareClientSecret'])
+        buildConfigField("String", "GOOGLE_API_KEY", keysProperties['googleApiKey'])
         buildConfigField("String", "API_VERSION_DATE", "\"20201118\"")
         buildConfigField("String", "BASE_URL", "\"https://api.foursquare.com/v2/\"")
     }
